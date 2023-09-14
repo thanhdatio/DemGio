@@ -251,7 +251,7 @@ function fillModal(id) {
 
   retHtmlFooter +=
     "<div class='input-group'>" +
-    "<input type='text' name='noteText' class='form-control' id='newNote' placeholder='Write Note' onKeyDown='if(event.which==13) AddNote(" +
+    "<input type='text' name='noteText' class='form-control' id='newNote' placeholder='Nội dung ghi chú' onKeyDown='if(event.which==13) AddNote(" +
     watch.id +
     ")' />" +
     "<span class='input-group-btn'>" +
