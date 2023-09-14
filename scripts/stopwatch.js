@@ -22,13 +22,13 @@ function StopWatchBody(Watch) {
       return (
         "<span class='btn btn-warning glyphicon glyphicon-pause' onclick='PausePlayToggle(this, " +
         Watch.id +
-        ")'>Pause</span>"
+        ")'>Dừng</span>"
       );
     } else {
       return (
         "<span class='btn btn-success glyphicon glyphicon-play' onclick='PausePlayToggle(this, " +
         Watch.id +
-        ")'>Play</span>"
+        ")'>Bắt đầu</span>"
       );
     }
   };
@@ -48,7 +48,7 @@ function StopWatchBody(Watch) {
     "<button type='button' class='btn btn-default glyphicon glyphicon-pencil' data-toggle='modal' data-target='#notesModal' onclick='fillModal(" +
     Watch.id +
     ")'>" +
-    " Notes" +
+    " Ghi chú" +
     "</button>" +
     "</div>" +
     "</div>" +
@@ -65,10 +65,10 @@ function StopWatchBody(Watch) {
     pausePlayButtonStr(Watch.status) +
     "<span class='btn btn-info glyphicon glyphicon-refresh' onclick='RestartClock(" +
     Watch.id +
-    ")'>Restart</span>" +
+    ")'>Làm lại</span>" +
     "<span class='btn btn-danger glyphicon glyphicon-remove' onclick='RemoveOne(" +
     Watch.id +
-    ")'>Remove</span>" +
+    ")'>Xóa</span>" +
     "<!/div>" +
     "</div>" +
     "</div>" +
@@ -135,21 +135,21 @@ function RestartClock(id) {
 
 //for pause play
 function PausePlayToggle(elem, id) {
-  if (elem.innerHTML == "Pause") {
+  if (elem.innerHTML == "Dừng") {
     elem.outerHTML =
       "<span class='btn btn-success glyphicon glyphicon-play' onclick='PausePlayToggle(this, " +
       id +
-      ")'>Play</span>";
+      ")'>Bắt đầu</span>";
     for (var i = 0; i < listStopWatch.length; i++) {
       if (listStopWatch[i].id == id) {
         listStopWatch[i].status = 0;
       }
     }
-  } else if (elem.innerHTML == "Play") {
+  } else if (elem.innerHTML == "Bắt đầu") {
     elem.outerHTML =
       "<span class='btn btn-warning glyphicon glyphicon-pause' onclick='PausePlayToggle(this, " +
       id +
-      ")'>Pause</span>";
+      ")'>Dừng</span>";
     for (var i = 0; i < listStopWatch.length; i++) {
       if (listStopWatch[i].id == id) {
         listStopWatch[i].status = 1;
@@ -257,7 +257,7 @@ function fillModal(id) {
     "<span class='input-group-btn'>" +
     "<button onclick='AddNote(" +
     watch.id +
-    ")' class='form-control btn btn-primary'><span class='glyphicon glyphicon-plus'></span> Add Note </button>" +
+    ")' class='form-control btn btn-primary'><span class='glyphicon glyphicon-plus'></span> Thêm ghi chú </button>" +
     "</span>" +
     "</div>";
 
